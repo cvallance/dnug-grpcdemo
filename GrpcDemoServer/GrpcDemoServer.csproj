@@ -7,4 +7,8 @@
         <RootNamespace>DNUG.GrpcDemoServer</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\GrpcDemo\GrpcDemo.csproj" />
+    </ItemGroup>
+
 </Project>

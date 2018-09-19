@@ -5,6 +5,11 @@
         <TargetFramework>netcoreapp2.1</TargetFramework>
         <AssemblyName>DNUG.GrpcDemoClient</AssemblyName>
         <RootNamespace>DNUG.GrpcDemoClient</RootNamespace>
+        <LangVersion>7.1</LangVersion>
     </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\GrpcDemo\GrpcDemo.csproj" />
+    </ItemGroup>
 
 </Project>
