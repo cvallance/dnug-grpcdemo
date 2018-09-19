@@ -25,11 +25,16 @@ namespace DNUG.GrpcDemo {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Cg5ncnBjZGVtby5wcm90bxIIR3JwY0RlbW8iHAoMSGVsbG9SZXF1ZXN0EgwK",
-            "BG5hbWUYASABKAkiHQoKSGVsbG9SZXBseRIPCgdtZXNzYWdlGAEgASgJMoYB",
+            "BG5hbWUYASABKAkiHQoKSGVsbG9SZXBseRIPCgdtZXNzYWdlGAEgASgJMtYC",
             "CgdHcmVldGVyEjoKCFNheUhlbGxvEhYuR3JwY0RlbW8uSGVsbG9SZXF1ZXN0",
             "GhQuR3JwY0RlbW8uSGVsbG9SZXBseSIAEj8KDVNheUhlbGxvQWdhaW4SFi5H",
-            "cnBjRGVtby5IZWxsb1JlcXVlc3QaFC5HcnBjRGVtby5IZWxsb1JlcGx5IgBC",
-            "EKoCDUROVUcuR3JwY0RlbW9iBnByb3RvMw=="));
+            "cnBjRGVtby5IZWxsb1JlcXVlc3QaFC5HcnBjRGVtby5IZWxsb1JlcGx5IgAS",
+            "QQoNTG90c09mUmVwbGllcxIWLkdycGNEZW1vLkhlbGxvUmVxdWVzdBoULkdy",
+            "cGNEZW1vLkhlbGxvUmVwbHkiADABEkMKD0xvdHNPZkdyZWV0aW5ncxIWLkdy",
+            "cGNEZW1vLkhlbGxvUmVxdWVzdBoULkdycGNEZW1vLkhlbGxvUmVwbHkiACgB",
+            "EkYKEExvdHNPZkV2ZXJ5dGhpbmcSFi5HcnBjRGVtby5IZWxsb1JlcXVlc3Qa",
+            "FC5HcnBjRGVtby5IZWxsb1JlcGx5IgAoATABQhCqAg1ETlVHLkdycGNEZW1v",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {

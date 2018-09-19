@@ -18,5 +18,11 @@ service Greeter {
   rpc SayHello (HelloRequest) returns (HelloReply) {}
   // Sends another greeting
   rpc SayHelloAgain (HelloRequest) returns (HelloReply) {}
+  
+  rpc LotsOfReplies (HelloRequest) returns (stream HelloReply) {}
+  
+  rpc LotsOfGreetings (stream HelloRequest) returns (HelloReply) {}
+  
+  rpc LotsOfEverything (stream HelloRequest) returns (stream HelloReply) {}
 }
 

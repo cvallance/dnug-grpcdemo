@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Grpc.Core;
 
 namespace DNUG.GrpcDemoServer
@@ -7,7 +8,7 @@ namespace DNUG.GrpcDemoServer
     {
         private const int Port = 50052;
         
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             var server = new Server
             {
@@ -19,7 +20,8 @@ namespace DNUG.GrpcDemoServer
             Console.WriteLine($"Server started, listening on port {Port}");
             Console.ReadKey();
 
-            server.ShutdownAsync().Wait();
+            Console.WriteLine("Server shutting down");
+            await server.ShutdownAsync();
         }
     }
 }

@@ -32,6 +32,27 @@ namespace DNUG.GrpcDemo {
         __Marshaller_GrpcDemo_HelloRequest,
         __Marshaller_GrpcDemo_HelloReply);
 
+    static readonly grpc::Method<global::DNUG.GrpcDemo.HelloRequest, global::DNUG.GrpcDemo.HelloReply> __Method_LotsOfReplies = new grpc::Method<global::DNUG.GrpcDemo.HelloRequest, global::DNUG.GrpcDemo.HelloReply>(
+        grpc::MethodType.ServerStreaming,
+        __ServiceName,
+        "LotsOfReplies",
+        __Marshaller_GrpcDemo_HelloRequest,
+        __Marshaller_GrpcDemo_HelloReply);
+
+    static readonly grpc::Method<global::DNUG.GrpcDemo.HelloRequest, global::DNUG.GrpcDemo.HelloReply> __Method_LotsOfGreetings = new grpc::Method<global::DNUG.GrpcDemo.HelloRequest, global::DNUG.GrpcDemo.HelloReply>(
+        grpc::MethodType.ClientStreaming,
+        __ServiceName,
+        "LotsOfGreetings",
+        __Marshaller_GrpcDemo_HelloRequest,
+        __Marshaller_GrpcDemo_HelloReply);
+
+    static readonly grpc::Method<global::DNUG.GrpcDemo.HelloRequest, global::DNUG.GrpcDemo.HelloReply> __Method_LotsOfEverything = new grpc::Method<global::DNUG.GrpcDemo.HelloRequest, global::DNUG.GrpcDemo.HelloReply>(
+        grpc::MethodType.DuplexStreaming,
+        __ServiceName,
+        "LotsOfEverything",
+        __Marshaller_GrpcDemo_HelloRequest,
+        __Marshaller_GrpcDemo_HelloReply);
+
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
@@ -59,6 +80,21 @@ namespace DNUG.GrpcDemo {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       public virtual global::System.Threading.Tasks.Task<global::DNUG.GrpcDemo.HelloReply> SayHelloAgain(global::DNUG.GrpcDemo.HelloRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      public virtual global::System.Threading.Tasks.Task LotsOfReplies(global::DNUG.GrpcDemo.HelloRequest request, grpc::IServerStreamWriter<global::DNUG.GrpcDemo.HelloReply> responseStream, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      public virtual global::System.Threading.Tasks.Task<global::DNUG.GrpcDemo.HelloReply> LotsOfGreetings(grpc::IAsyncStreamReader<global::DNUG.GrpcDemo.HelloRequest> requestStream, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      public virtual global::System.Threading.Tasks.Task LotsOfEverything(grpc::IAsyncStreamReader<global::DNUG.GrpcDemo.HelloRequest> requestStream, grpc::IServerStreamWriter<global::DNUG.GrpcDemo.HelloReply> responseStream, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -176,6 +212,30 @@ namespace DNUG.GrpcDemo {
       {
         return CallInvoker.AsyncUnaryCall(__Method_SayHelloAgain, null, options, request);
       }
+      public virtual grpc::AsyncServerStreamingCall<global::DNUG.GrpcDemo.HelloReply> LotsOfReplies(global::DNUG.GrpcDemo.HelloRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return LotsOfReplies(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncServerStreamingCall<global::DNUG.GrpcDemo.HelloReply> LotsOfReplies(global::DNUG.GrpcDemo.HelloRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncServerStreamingCall(__Method_LotsOfReplies, null, options, request);
+      }
+      public virtual grpc::AsyncClientStreamingCall<global::DNUG.GrpcDemo.HelloRequest, global::DNUG.GrpcDemo.HelloReply> LotsOfGreetings(grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return LotsOfGreetings(new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncClientStreamingCall<global::DNUG.GrpcDemo.HelloRequest, global::DNUG.GrpcDemo.HelloReply> LotsOfGreetings(grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncClientStreamingCall(__Method_LotsOfGreetings, null, options);
+      }
+      public virtual grpc::AsyncDuplexStreamingCall<global::DNUG.GrpcDemo.HelloRequest, global::DNUG.GrpcDemo.HelloReply> LotsOfEverything(grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return LotsOfEverything(new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncDuplexStreamingCall<global::DNUG.GrpcDemo.HelloRequest, global::DNUG.GrpcDemo.HelloReply> LotsOfEverything(grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncDuplexStreamingCall(__Method_LotsOfEverything, null, options);
+      }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       protected override GreeterClient NewInstance(ClientBaseConfiguration configuration)
       {
@@ -189,7 +249,10 @@ namespace DNUG.GrpcDemo {
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_SayHello, serviceImpl.SayHello)
-          .AddMethod(__Method_SayHelloAgain, serviceImpl.SayHelloAgain).Build();
+          .AddMethod(__Method_SayHelloAgain, serviceImpl.SayHelloAgain)
+          .AddMethod(__Method_LotsOfReplies, serviceImpl.LotsOfReplies)
+          .AddMethod(__Method_LotsOfGreetings, serviceImpl.LotsOfGreetings)
+          .AddMethod(__Method_LotsOfEverything, serviceImpl.LotsOfEverything).Build();
     }
 
   }

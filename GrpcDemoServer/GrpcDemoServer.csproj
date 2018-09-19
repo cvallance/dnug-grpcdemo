@@ -5,6 +5,7 @@
         <TargetFramework>netcoreapp2.1</TargetFramework>
         <AssemblyName>DNUG.GrpcDemoServer</AssemblyName>
         <RootNamespace>DNUG.GrpcDemoServer</RootNamespace>
+        <LangVersion>7.1</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
