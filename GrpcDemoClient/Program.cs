@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GrpcDemoClient
+namespace DNUG.GrpcDemoClient
 {
     class Program
     {
